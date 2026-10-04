@@ -1,0 +1,9 @@
+# polyprompt-ai bundle patch：向组合挂载 polyprompt-ai。
+# host 半（数据路由 /api/polyprompt）与 client 半（__ModuleLoader__ ✨ 按钮 UI）均由
+# 官方 bundle 流程解析。
+#
+# 安装（持久化）：dsh plugin --profile web add "github:sunyuhuirong/polyprompt-ai#main"
+# 或本地路径：    dsh plugin --profile web add "file:/abs/path/to/polyprompt-ai"
+- insert:
+    - id: polyprompt-ai
+      name: polyprompt-ai

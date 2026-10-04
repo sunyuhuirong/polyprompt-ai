@@ -1,0 +1,79 @@
+{
+  "name": "polyprompt-ai",
+  "version": "0.1.0",
+  "description": "PolyPrompt — scene-aware prompt optimizer: one engine, three entries (DSH web plugin / MCP server / CLI). 多场景提示词优化器：一套引擎，三处入口。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./engine": "./lib/engine.js",
+    "./mcp": "./lib/mcp.js",
+    "./cli": "./lib/cli.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "polyprompt": "lib/cli.js"
+  },
+  "files": [
+    "lib",
+    "test",
+    "examples",
+    "cordis.patch.yml"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node scripts/check.js",
+    "typecheck": "tsc --project tsconfig.json"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "cordis",
+    "mcp",
+    "mcp-server",
+    "prompt",
+    "prompt-engineering",
+    "prompt-optimizer",
+    "cli"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.0.1"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunyuhuirong/polyprompt-ai.git"
+  },
+  "homepage": "https://github.com/sunyuhuirong/polyprompt-ai#readme",
+  "bugs": {
+    "url": "https://github.com/sunyuhuirong/polyprompt-ai/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ],
+      "platform": "web"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  }
+}

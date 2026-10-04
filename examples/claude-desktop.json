@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "polyprompt": {
+      "command": "polyprompt",
+      "args": ["mcp"],
+      "env": {
+        "POLYPROMPT_BASE_URL": "https://api.deepseek.com/v1",
+        "POLYPROMPT_API_KEY": "sk-...",
+        "POLYPROMPT_MODEL": "deepseek-chat"
+      }
+    }
+  }
+}
